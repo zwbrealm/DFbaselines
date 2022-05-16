@@ -7,7 +7,9 @@
 
 
 1.**CNN-RNN**:Deep Learning for Network Traffic Classification
+
 2.**FS-Net**:FS-Net: A Flow Sequence Network For Encrypted Traffic Classification
+
 3.**Multitasks**:Multitask Learning for Network Traffic Classification
 
 
