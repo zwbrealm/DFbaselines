@@ -78,16 +78,16 @@ class Fs_net(tensorflow.keras.Model):
         tf.cast(cls_dense_2, dtype=tf.float32, name=None)
         return cls_dense_2, decoder_output
 
-    def build_loss(self):
-        logits, ae_outputs = self.fs_net()
-        self.Y = tf.cast(self.Y, dtype = tf.float32)
-        logits = tf.cast(logits, dtype=tf.float32)
+#     def build_loss(self):
+#         logits, ae_outputs = self.fs_net()
+#         self.Y = tf.cast(self.Y, dtype = tf.float32)
+#         logits = tf.cast(logits, dtype=tf.float32)
 
-        cls_entropy = tensorflow.losses.binary_crossentropy(self.Y, logits)
-        cls_loss = tf.reduce_mean(cls_entropy, name="cls_loss")
-        ae_loss = 0
-        total_loss = cls_loss + self.alpha * ae_loss
-        return total_loss, logits
+#         cls_entropy = tensorflow.losses.binary_crossentropy(self.Y, logits)
+#         cls_loss = tf.reduce_mean(cls_entropy, name="cls_loss")
+#         ae_loss = 0
+#         total_loss = cls_loss + self.alpha * ae_loss
+#         return total_loss, logits
 
     def build_fs_net_loss(self):
         logits, ae_outputs = self.fs_net()
