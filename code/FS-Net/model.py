@@ -90,7 +90,7 @@ class Fs_net(tensorflow.keras.Model):
         return total_loss, logits
 
     def build_fs_net_loss(self):
-        logits, ae_outputs = self.tinny_fs_net()
+        logits, ae_outputs = self.fs_net()
         # self.X  [batch_size,n_steps,vocab_size] (one-hot)
         # ae_outputs [batch_size,n_steps,decoder_n_neurons] (vocab_size=decoder_n_neurons)
         cls_entropy = tensorflow.losses.binary_crossentropy(self.Y, logits)
