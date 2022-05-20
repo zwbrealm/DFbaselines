@@ -30,7 +30,7 @@ Y1 = tf.compat.v1.placeholder(tf.int32, [batch_size,label_size])
 X2 = tf.compat.v1.placeholder(tf.float32, [X_test.shape[0], n_steps, n_inputs])
 Y2 = tf.compat.v1.placeholder(tf.int32, [X_test.shape[0],label_size])
 fs_net = Fs_net(X1, Y1)
-loss, logits = fs_net.build_loss()
+loss, logits = fs_net.build_fs_net_loss()
 lr = 1e-4
 optimizer  = tf.compat.v1.train.AdamOptimizer(learning_rate=lr)
 train_op = optimizer.minimize(loss)
